@@ -1,0 +1,565 @@
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#131313" name="theme-color"/>
+<meta content="Official merch and music store for Diana. Screen-printed apparel in limited runs, new single Midnight Static out now." name="description"/>
+<title>Diana - Official Merch Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    try {
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-surface": "#e5e2e1",
+              "error-container": "#93000a",
+              "on-secondary-fixed-variant": "#454747",
+              "surface-container-highest": "#353535",
+              "on-error-container": "#ffdad6",
+              "secondary-fixed-dim": "#c6c6c7",
+              "secondary-container": "#454747",
+              "surface-container-high": "#2a2a2a",
+              "surface-variant": "#353535",
+              "surface-tint": "#abd600",
+              "tertiary": "#ffffff",
+              "surface-container-lowest": "#0e0e0e",
+              "on-background": "#e5e2e1",
+              "secondary-fixed": "#e2e2e2",
+              "outline": "#8e9379",
+              "on-primary-container": "#556d00",
+              "primary-fixed": "#abd600",
+              "inverse-primary": "#506600",
+              "on-tertiary-fixed-variant": "#852400",
+              "tertiary-fixed": "#ffdbd0",
+              "on-error": "#690005",
+              "background": "#131313",
+              "inverse-surface": "#e5e2e1",
+              "on-primary-fixed-variant": "#3c4d00",
+              "surface-dim": "#131313",
+              "on-tertiary-container": "#b83500",
+              "surface-bright": "#393939",
+              "on-secondary-fixed": "#1a1c1c",
+              "on-secondary-container": "#b4b5b5",
+              "primary-container": "#abd600",
+              "on-primary": "#283500",
+              "surface-container-low": "#1c1b1b",
+              "on-tertiary": "#5e1700",
+              "on-secondary": "#2f3131",
+              "on-surface-variant": "#c4c9ac",
+              "outline-variant": "#444933",
+              "primary-fixed-dim": "#abd600",
+              "inverse-on-surface": "#313030",
+              "secondary": "#c6c6c7",
+              "primary": "#ffffff",
+              "error": "#ffb4ab",
+              "on-primary-fixed": "#161e00",
+              "tertiary-fixed-dim": "#ffb59e",
+              "on-tertiary-fixed": "#3a0b00",
+              "surface-container": "#20201f",
+              "tertiary-container": "#ffdbd0",
+              "surface": "#131313"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "unit": "4px",
+              "container-max": "1440px",
+              "margin-desktop": "48px",
+              "margin-mobile": "20px",
+              "gutter": "16px"
+            },
+            "fontFamily": {
+              "headline-lg-mobile": ["Anton"],
+              "headline-xl": ["Anton"],
+              "label-sm": ["JetBrains Mono"],
+              "body-md": ["Hanken Grotesk"],
+              "headline-lg": ["Anton"]
+            },
+            "fontSize": {
+              "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+              "headline-xl": ["84px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "400"}],
+              "label-sm": ["14px", {"lineHeight": "16px", "fontWeight": "500"}],
+              "body-md": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    } catch (_e) {}
+  </script>
+<style>
+    @keyframes grain {
+      0%, 100% { transform: translate(0, 0); }
+      10% { transform: translate(-5%, -10%); }
+      20% { transform: translate(-15%, 5%); }
+      30% { transform: translate(7%, -25%); }
+      40% { transform: translate(-5%, 25%); }
+      50% { transform: translate(-15%, 10%); }
+      60% { transform: translate(15%, 0%); }
+      70% { transform: translate(0%, 15%); }
+      80% { transform: translate(3%, 35%); }
+      90% { transform: translate(-10%, 10%); }
+    }
+
+    .grain-overlay {
+      position: fixed;
+      top: -150%;
+      left: -150%;
+      width: 400%;
+      height: 400%;
+      background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 9999;
+      animation: grain 8s steps(10) infinite;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.8) rotate(-5deg); }
+      70% { transform: scale(1.05) rotate(2deg); }
+      100% { opacity: 1; transform: scale(1) rotate(-1deg); }
+    }
+
+    @keyframes popInButton {
+      0% { opacity: 0; transform: scale(0.8) rotate(5deg); }
+      70% { transform: scale(1.05) rotate(-3deg); }
+      100% { opacity: 1; transform: scale(1) rotate(-2deg); }
+    }
+
+    .animate-pop-in {
+      animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      opacity: 0;
+    }
+
+    .animate-pop-in-btn {
+      animation: popInButton 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background-color: #abd600;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    .animate-float-subtle {
+      animation: float-icon 4s ease-in-out infinite;
+    }
+
+    .sticker-slap:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      box-shadow: 12px 12px 0px 0px rgba(0,0,0,1) !important;
+    }
+
+    .sticker-slap-yellow:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      box-shadow: 12px 12px 0px 0px #abd600 !important;
+    }
+
+    .price-vibrate:hover .price-tag {
+      animation: vibrate 0.3s linear infinite;
+    }
+
+    @keyframes vibrate {
+      0% { transform: rotate(1deg); }
+      50% { transform: rotate(-1deg); }
+      100% { transform: rotate(1deg); }
+    }
+
+    .torn-mask {
+      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,5 L5,0 L12,4 L18,1 L25,6 L33,2 L40,8 L48,3 L55,9 L65,4 L75,10 L85,5 L92,8 L100,5 L100,95 L95,100 L88,96 L80,100 L70,95 L60,100 L50,96 L40,100 L30,95 L20,100 L10,96 L0,100 Z" fill="black"/></svg>');
+      mask-size: 100% 100%;
+      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,5 L5,0 L12,4 L18,1 L25,6 L33,2 L40,8 L48,3 L55,9 L65,4 L75,10 L85,5 L92,8 L100,5 L100,95 L95,100 L88,96 L80,100 L70,95 L60,100 L50,96 L40,100 L30,95 L20,100 L10,96 L0,100 Z" fill="black"/></svg>');
+      -webkit-mask-size: 100% 100%;
+    }
+
+    @keyframes heroKenBurns {
+      0% { transform: scale(1.02) translate(0, 0); }
+      100% { transform: scale(1.08) translate(-1%, -0.5%); }
+    }
+
+    .hero-photo {
+      animation: heroKenBurns 32s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    .tilt-card {
+      transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+
+    .tilt-card.tilting {
+      transition: none;
+    }
+
+    .halftone-overlay {
+      background-image: radial-gradient(#abd600 10%, transparent 11%);
+      background-size: 8px 8px;
+      opacity: 0.15;
+    }
+
+    .ink-bleed {
+      filter: url(#ink-bleed-filter);
+    }
+
+    /* Gradient underline animation for Diana's name */
+    .name-underline-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .name-underline-bar {
+      position: absolute;
+      left: 4px;
+      right: 4px;
+      bottom: -8px;
+      height: 14px;
+      width: 0%;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #556d00, #abd600, #556d00);
+      background-size: 200% 100%;
+      animation: growUnderline 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards,
+                 slideGradient 1.8s linear 1.5s 1;
+    }
+
+    @keyframes growUnderline {
+      0% { width: 0%; }
+      100% { width: calc(100% - 8px); }
+    }
+
+    @keyframes slideGradient {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+
+    .play-btn-pulse {
+      animation: playPulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes playPulse {
+      0% { box-shadow: 0 0 0 0 rgba(171, 214, 0, 0.4); }
+      100% { box-shadow: 0 0 0 14px rgba(171, 214, 0, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+      }
+      .grain-overlay { display: none; }
+      .name-underline-bar { width: calc(100% - 8px); }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed relative overflow-x-hidden">
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary-fixed focus:text-on-primary-fixed focus:px-6 focus:py-3 focus:font-label-sm focus:uppercase focus:rounded" href="#main-content">Skip to main content</a>
+<div class="grain-overlay"></div>
+<!-- SVG Ink Bleed Filter -->
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0;">
+<filter id="ink-bleed-filter">
+<feturbulence basefrequency="0.05" numoctaves="2" result="noise" type="fractalNoise"></feturbulence>
+<fedisplacementmap in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
+</filter>
+</svg>
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b-2 border-primary-fixed-dim flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+<a class="font-headline-lg text-headline-lg italic uppercase text-primary ink-bleed rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="index.html">DIANA</a>
+<div class="hidden md:flex gap-10 items-center">
+<a class="nav-link font-label-sm text-label-sm text-on-background hover:text-primary-fixed transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#featured-single">MUSIC</a>
+<a class="nav-link font-label-sm text-label-sm text-on-background hover:text-primary-fixed transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="shop.html">SHOP</a>
+<a class="nav-link font-label-sm text-label-sm text-on-background hover:text-primary-fixed transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="tour.html">TOUR</a>
+<a class="nav-link font-label-sm text-label-sm text-on-background hover:text-primary-fixed transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="#signup">SIGN UP</a>
+</div>
+<div class="flex items-center gap-4 md:gap-6">
+<button aria-label="View shopping bag" class="cursor-pointer flex items-center justify-center w-11 h-11 rounded-full material-symbols-outlined text-primary hover:scale-110 hover:bg-surface-container-high transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">shopping_cart</button>
+<button aria-label="View account" class="cursor-pointer hidden sm:flex items-center justify-center w-11 h-11 rounded-full material-symbols-outlined text-primary hover:scale-110 hover:bg-surface-container-high transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">person</button>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="cursor-pointer md:hidden flex items-center justify-center w-11 h-11 rounded-full material-symbols-outlined text-primary hover:bg-surface-container-high transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" id="mobile-menu-toggle" type="button">menu</button>
+</div>
+<div class="hidden md:hidden flex-col w-full absolute top-full left-0 bg-background border-b-2 border-primary-fixed-dim px-margin-mobile py-6 gap-2" id="mobile-menu">
+<a class="font-label-sm text-label-sm text-on-background hover:text-primary-fixed transition-colors py-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed" href="#featured-single">MUSIC</a>
+<a class="font-label-sm text-label-sm text-on-background hover:text-primary-fixed transition-colors py-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed" href="shop.html">SHOP</a>
+<a class="font-label-sm text-label-sm text-on-background hover:text-primary-fixed transition-colors py-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed" href="tour.html">TOUR</a>
+<a class="font-label-sm text-label-sm text-on-background hover:text-primary-fixed transition-colors py-3 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed" href="#signup">SIGN UP</a>
+</div>
+</nav>
+<main class="relative min-h-screen pt-16" id="main-content">
+<!-- Hero Section -->
+<section class="relative min-h-[95vh] flex items-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+<!-- Background Wash -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-gradient-to-br from-surface-container-low via-background to-background"></div>
+<img alt="" class="hero-photo absolute inset-0 w-full h-full object-cover object-[50%_35%] md:object-[65%_35%] opacity-80 saturate-[.85]" fetchpriority="high" loading="eager" src="hero-bg.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background/10"></div>
+<div class="absolute inset-0 halftone-overlay opacity-20"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<!-- Content Canvas -->
+<div class="relative z-20 w-full max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter py-24 items-center">
+<div class="md:col-span-8 flex flex-col items-start gap-12">
+<!-- Massive Headline -->
+<div class="relative">
+<div class="name-underline-wrap">
+<h1 class="animate-pop-in font-headline-xl text-[clamp(56px,16vw,220px)] leading-[0.8] text-primary tracking-tighter uppercase font-bold drop-shadow-[10px_10px_0px_#abd600] ink-bleed break-words">
+              DIANA
+            </h1>
+<span class="name-underline-bar"></span>
+</div>
+<div class="absolute -top-12 -right-12 md:-right-24 animate-float-subtle">
+<span aria-hidden="true" class="material-symbols-outlined text-primary-fixed text-7xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="absolute -bottom-6 left-24 animate-float-subtle" style="animation-delay: 1.5s;">
+<span aria-hidden="true" class="material-symbols-outlined text-primary-fixed text-6xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<!-- Description & CTA -->
+<div class="flex flex-col gap-8 max-w-lg mt-4">
+<p class="font-body-md text-on-surface-variant bg-surface-container/90 p-6 border-l-8 border-primary-fixed backdrop-blur-md rotate-1 shadow-xl">
+              New single's out, new merch just landed. Screen-printed in small runs, no restocks once they're gone.
+            </p>
+<a class="animate-pop-in-btn sticker-slap press-effect cursor-pointer inline-block w-fit px-14 py-7 bg-primary-fixed text-on-primary-fixed font-headline-lg text-headline-lg uppercase border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all -rotate-2 ml-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-4 focus-visible:ring-offset-background" href="#featured-merch">
+              EXPLORE NOW
+            </a>
+</div>
+</div>
+<!-- Floating Sticker -->
+<div class="md:col-span-4 flex justify-center items-center relative py-12">
+<div class="animate-pop-in relative z-10" style="animation-delay: 0.4s;">
+<a aria-label="New drop live — shop the merch" class="relative w-56 h-56 md:w-64 md:h-64 -rotate-6 bg-primary-fixed rounded-full flex flex-col items-center justify-center border-8 border-black shadow-[20px_20px_0px_0px_rgba(0,0,0,0.5)] sticker-slap-yellow cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-fixed focus-visible:ring-offset-4 focus-visible:ring-offset-background" href="shop.html">
+<span class="font-headline-lg text-3xl text-on-primary-fixed uppercase text-center leading-none px-4">New<br/>Drop<br/>Live</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEATURED SINGLE section -->
+<section id="featured-single" class="py-40 px-margin-mobile md:px-margin-desktop bg-surface-container-low border-t-2 border-primary-fixed-dim/20 relative z-30 -mt-16 overflow-hidden">
+<div class="absolute inset-0 halftone-overlay pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative">
+<div class="reveal relative mb-20 px-4">
+<h2 class="font-headline-lg text-headline-lg md:text-[80px] uppercase ink-bleed -rotate-1">FEATURED SINGLE</h2>
+<div class="h-4 w-full bg-primary-fixed absolute -bottom-2 -left-2 -z-10 opacity-30"></div>
+</div>
+<div class="reveal flex flex-col md:flex-row items-center gap-16">
+<!-- Album Art Placeholder + Play Button -->
+<div class="group relative shrink-0 rotate-2 transition-transform hover:rotate-0 duration-500">
+<div class="tilt-card torn-mask bg-black p-2 shadow-2xl w-72 h-72 md:w-80 md:h-80 overflow-hidden">
+<img alt="Diana - Midnight Static album cover" class="w-full h-full object-cover" src="album-art.jpg"/>
+</div>
+<div class="absolute -top-4 -left-4 bg-primary-fixed text-black font-label-sm px-4 py-1 border-2 border-black rotate-12 shadow-md">NEW SINGLE</div>
+<button aria-label="Play featured single" class="play-btn-pulse cursor-pointer absolute inset-0 m-auto w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary-fixed border-4 border-black flex items-center justify-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:scale-110 transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-4 focus-visible:ring-offset-surface-container-low" type="button">
+<span aria-hidden="true" class="material-symbols-outlined text-black text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Track Info -->
+<div class="flex flex-col items-start gap-6 max-w-lg">
+<span class="font-label-sm text-primary-fixed tracking-widest uppercase">Out Now</span>
+<h3 class="font-headline-lg text-[40px] md:text-[56px] leading-none ink-bleed uppercase">MIDNIGHT STATIC</h3>
+<p class="font-body-md text-on-surface-variant">Hit play for a 30-second preview, or stream the full track below.</p>
+<div class="flex flex-wrap gap-4 mt-2">
+<a class="sticker-slap press-effect cursor-pointer inline-block px-8 py-4 bg-transparent border-4 border-primary-fixed text-primary-fixed font-label-sm uppercase tracking-wide hover:bg-primary-fixed hover:text-black transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-low" href="#">
+                Spotify
+              </a>
+<a class="sticker-slap press-effect cursor-pointer inline-block px-8 py-4 bg-transparent border-4 border-white/40 text-on-surface-variant font-label-sm uppercase tracking-wide hover:border-primary-fixed hover:text-primary-fixed transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-low" href="#">
+                Apple Music
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEATURED MERCH section -->
+<section id="featured-merch" class="py-24 px-margin-mobile md:px-margin-desktop bg-black text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, #333 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="max-w-container-max mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
+<div class="reveal price-vibrate group flex-1 rotate-1">
+<div class="tilt-card torn-mask border-8 border-white p-2 bg-surface-container flex items-center justify-center w-full aspect-square max-w-md mx-auto shadow-2xl transition-transform group-hover:rotate-0 duration-500 overflow-hidden">
+<img alt="Static Bomber — black nylon bomber jacket with tour dates printed down the sleeve" class="w-full h-full object-cover" loading="lazy" src="products/bomber.jpg"/>
+</div>
+<div class="absolute -top-4 left-8 bg-primary-fixed text-black font-label-sm px-4 py-1 border-2 border-black rotate-12 shadow-md">NEW DROP</div>
+</div>
+<div class="reveal flex-1 flex flex-col items-start gap-8">
+<span class="font-label-sm text-primary-fixed tracking-widest uppercase">Featured Merch</span>
+<h2 class="font-headline-xl text-7xl md:text-8xl leading-none uppercase italic ink-bleed">STATIC<br/>BOMBER</h2>
+<p class="font-body-md text-on-surface-variant max-w-md">Boxy nylon bomber with the full tour run printed down the sleeve. Limited stock, no reprints.</p>
+<span class="price-tag font-label-sm bg-primary-fixed text-black px-4 py-2 font-bold w-fit text-lg">$120.00</span>
+<a class="sticker-slap press-effect cursor-pointer inline-block px-12 py-6 bg-white text-black font-headline-lg text-4xl uppercase hover:bg-primary-fixed transition-colors border-4 border-white hover:border-black shadow-[10px_10px_0px_0px_#abd600] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-4 focus-visible:ring-offset-black" href="shop.html">SHOP NOW</a>
+</div>
+</div>
+<!-- Sticker Overlay -->
+<div class="absolute bottom-10 right-10 animate-float-subtle opacity-50">
+<span aria-hidden="true" class="material-symbols-outlined text-[120px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</section>
+
+<!-- MAILING LIST section -->
+<section id="signup" class="py-32 px-margin-mobile md:px-margin-desktop bg-background overflow-hidden">
+<div class="reveal max-w-container-max mx-auto relative bg-surface-container border-4 border-primary-fixed p-12 md:p-28 shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] -rotate-1">
+<div class="absolute top-6 left-6 md:top-12 md:left-12 flex gap-6">
+<span aria-hidden="true" class="material-symbols-outlined text-primary-fixed text-5xl animate-pulse">new_releases</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary-fixed text-5xl animate-pulse" style="animation-delay: 0.4s">auto_awesome</span>
+</div>
+<div class="max-w-2xl mx-auto text-center flex flex-col gap-10">
+<h2 class="font-headline-lg text-headline-lg md:text-[90px] leading-[0.85] uppercase ink-bleed rotate-1">JOIN THE MAILING LIST</h2>
+<p class="font-body-md text-on-surface-variant max-w-lg mx-auto">Get early access to drops, exclusive zines, and secret gig locations. No spam, unsubscribe any time.</p>
+<form class="flex flex-col md:flex-row gap-6 mt-6">
+<label class="sr-only" for="signup-email">Email address</label>
+<input autocomplete="email" class="flex-1 bg-black/50 border-4 border-primary-fixed/40 px-8 py-5 text-white font-label-sm focus:border-primary-fixed focus:ring-0 focus:outline-none placeholder:text-surface-variant/50 transition-colors" id="signup-email" name="email" placeholder="YOUR@EMAIL.COM" required="" type="email"/>
+<button class="sticker-slap press-effect cursor-pointer px-16 py-5 bg-primary-fixed text-on-primary-fixed font-headline-lg text-headline-lg uppercase border-4 border-black shadow-[6px_6px_0px_0px_#000] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-surface-container" type="submit">SIGN UP</button>
+</form>
+</div>
+<!-- Sticker -->
+<div class="absolute -bottom-8 -right-8 animate-float-subtle">
+<span aria-hidden="true" class="material-symbols-outlined text-primary-fixed text-8xl" style="font-variation-settings: 'FILL' 1;">mood</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-lowest border-t-2 border-primary-fixed-dim/30 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-16 gap-12 relative z-10">
+<div class="flex flex-col items-center md:items-start gap-6">
+<a class="font-headline-lg text-headline-lg text-primary ink-bleed -rotate-2 inline-block rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" href="index.html">DIANA</a>
+<p class="font-label-sm text-on-surface-variant opacity-60">© 2026 DIANA OFFICIAL MERCH. WORLDWIDE.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" href="#">SHIPPING &amp; RETURNS</a>
+<a class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" href="#">PRIVACY POLICY</a>
+<a class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" href="#">CONTACT</a>
+<a class="nav-link font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" href="#">SIZE GUIDE</a>
+</div>
+<div class="flex gap-6">
+<a aria-label="Email Diana's team" class="w-14 h-14 rounded-none border-2 border-primary flex items-center justify-center hover:bg-primary-fixed hover:text-black transition-all cursor-pointer rotate-3 shadow-md hover:rotate-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container-lowest" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-2xl">alternate_email</span>
+</a>
+</div>
+</footer>
+<script src="cart.js"></script>
+<script>
+    // Scroll Reveal Logic
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight / 5 * 4.8;
+
+      revealElements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if(boxTop < triggerBottom) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    const closeMobileMenu = () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = 'menu';
+      menuToggle.setAttribute('aria-label', 'Open menu');
+    };
+
+    const openMobileMenu = () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.textContent = 'close';
+      menuToggle.setAttribute('aria-label', 'Close menu');
+    };
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    // 3D Tilt Effect
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const maxTilt = 11;
+
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateY = ((x - centerX) / centerX) * maxTilt;
+          const rotateX = -((y - centerY) / centerY) * maxTilt;
+
+          card.classList.add('tilting');
+          card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+          const shadowX = -rotateY * 1.5;
+          const shadowY = 10 + rotateX * 1.5;
+          card.style.boxShadow = `${shadowX}px ${shadowY}px 40px rgba(0, 0, 0, 0.55)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('tilting');
+          card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+          card.style.boxShadow = '';
+        });
+      });
+    }
+  </script>
+</body></html>

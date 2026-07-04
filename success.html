@@ -1,0 +1,128 @@
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#131313" name="theme-color"/>
+<meta content="noindex" name="robots"/>
+<title>Order Confirmed - Diana Official Merch</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    try {
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-surface": "#e5e2e1",
+              "surface-container-high": "#2a2a2a",
+              "primary-fixed": "#abd600",
+              "primary-fixed-dim": "#abd600",
+              "background": "#131313",
+              "on-background": "#e5e2e1",
+              "on-primary-fixed": "#161e00",
+              "on-surface-variant": "#c4c9ac",
+              "surface-container": "#20201f",
+              "surface-container-low": "#1c1b1b",
+              "surface-container-lowest": "#0e0e0e",
+              "primary": "#ffffff",
+              "surface": "#131313"
+            },
+            "spacing": {
+              "container-max": "1440px",
+              "margin-desktop": "48px",
+              "margin-mobile": "20px"
+            },
+            "fontFamily": {
+              "headline-xl": ["Anton"],
+              "label-sm": ["JetBrains Mono"],
+              "body-md": ["Hanken Grotesk"],
+              "headline-lg": ["Anton"]
+            },
+            "fontSize": {
+              "label-sm": ["14px", {"lineHeight": "16px", "fontWeight": "500"}],
+              "body-md": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    } catch (_e) {}
+  </script>
+<script>
+    // Payment done — clear the bag before cart.js reads it.
+    try { localStorage.removeItem('diana-cart'); } catch (_e) {}
+  </script>
+<style>
+    .ink-bleed { filter: url(#ink-bleed-filter); }
+
+    .halftone-overlay {
+      background-image: radial-gradient(#abd600 10%, transparent 11%);
+      background-size: 8px 8px;
+      opacity: 0.15;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.8) rotate(-5deg); }
+      70% { transform: scale(1.05) rotate(2deg); }
+      100% { opacity: 1; transform: scale(1) rotate(-1deg); }
+    }
+
+    .animate-pop-in {
+      animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      opacity: 0;
+    }
+
+    .sticker-slap:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      box-shadow: 12px 12px 0px 0px rgba(0,0,0,1) !important;
+    }
+
+    @keyframes float-icon {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    .animate-float-subtle { animation: float-icon 4s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md relative overflow-x-hidden min-h-screen flex flex-col">
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0;">
+<filter id="ink-bleed-filter">
+<feturbulence basefrequency="0.05" numoctaves="2" result="noise" type="fractalNoise"></feturbulence>
+<fedisplacementmap in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
+</filter>
+</svg>
+<nav class="w-full bg-background/95 border-b-2 border-primary-fixed-dim flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+<a class="font-headline-lg text-headline-lg italic uppercase text-primary ink-bleed rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-background" href="index.html">DIANA</a>
+</nav>
+
+<main class="flex-1 relative flex items-center justify-center px-margin-mobile md:px-margin-desktop py-24 overflow-hidden">
+<div class="absolute inset-0 halftone-overlay opacity-10 pointer-events-none"></div>
+<div class="animate-pop-in relative max-w-2xl w-full bg-surface-container border-4 border-primary-fixed p-10 md:p-16 shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] -rotate-1 text-center flex flex-col items-center gap-8">
+<div class="animate-float-subtle">
+<span aria-hidden="true" class="material-symbols-outlined text-primary-fixed text-8xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-headline-lg text-[44px] md:text-[64px] leading-[0.9] uppercase ink-bleed rotate-1 text-primary">ORDER<br/>CONFIRMED</h1>
+<p class="font-body-md text-on-surface-variant max-w-md">You're in. A receipt is on its way to your inbox — your gear ships within 3–5 working days. Everything's printed by hand, so give it a minute.</p>
+<div class="flex flex-wrap justify-center gap-6 mt-2">
+<a class="sticker-slap cursor-pointer inline-block px-10 py-5 bg-primary-fixed text-on-primary-fixed font-headline-lg text-2xl uppercase border-4 border-black shadow-[6px_6px_0px_0px_#000] transition-all -rotate-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-surface-container" href="shop.html">Keep Shopping</a>
+<a class="sticker-slap cursor-pointer inline-block px-10 py-5 bg-transparent border-4 border-primary-fixed text-primary-fixed font-headline-lg text-2xl uppercase transition-all rotate-1 hover:bg-primary-fixed hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-fixed focus-visible:ring-offset-4 focus-visible:ring-offset-surface-container" href="index.html">Back Home</a>
+</div>
+</div>
+</main>
+
+<footer class="w-full bg-surface-container-lowest border-t-2 border-primary-fixed-dim/30 flex justify-center items-center px-margin-mobile md:px-margin-desktop py-10">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 DIANA OFFICIAL MERCH. WORLDWIDE.</p>
+</footer>
+</body></html>

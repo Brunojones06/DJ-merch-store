@@ -1,0 +1,14 @@
+# deps / deploy
+node_modules/
+.vercel/
+.env
+.env.local
+
+# OS
+.DS_Store
+
+# local source material (not used by the site at runtime)
+index.html.bak
+Screenshot 2026-07-01 at 19.29.38.png
+pexels-tin-stanton-2160251912-37937566.jpg
+stitch_midnight_static_merch_collection/
